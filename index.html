@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+ <script src="https://kit.fontawesome.com/c1abb5f59a.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <title>Forex Logger</title>
+  </head>
+  <body id="main">
+    <!--Header Below-->
+    <div class="con">
+      <div class="header p-4 w-100">
+        <h1 class="mb-3"> <span class="fa fa-calculator text-primary"></span> <span class="fa fa-dollar-sign text-primary"></span> Forex Calculator</h1>
+        <!--Header Above-->
+      </div>
+      <div class="main">
+        <!--Intro Below-->
+        <div class="intro mx-sm-3">
+          <p>
+            This is a Forex Calculator / Currency Converter where you can keep track of your
+            wins and losses.
+          </p>
+          </div>
+          <!-- intro above -->
+         
+
+          <div class="main-container">
+            <form class="" id="main-form" method="POST">
+              
+              <!--Account Name Field Below-->
+              <div class="mb-4">
+                <label for="Account number"> Account name <span class="fa fa-mobile-alt"></span></label>
+                <input type="text" placeholder="Account Name" class="input-field" id="accountName"  value="" />
+              </div>
+              <!--Account Name Field Above-->
+
+              <!--Input currency field below-->
+              <p>Select the option below to change to your prefered currency (Default is USD)</p>
+              <div class="input-group d-block">
+                <select id="input_currency" class="btn btn-default border-primary dropdown-toggle mb-5 text-light ">
+                  <option value="USD">US Dollar</option>
+                  <option value="AUD">Australian Dollar</option>
+                  <option value="ZAR">Rands</option>
+                  <option value="CAD">Canadian Dollar</option>
+                  <option value="GBP">Britain Pound</option>
+                  <option value="EUR">Euro</option>
+                </select>
+              </div>
+              <!--Input Currency Field Above-->
+
+              <!--Money Fields Below-->
+              <div class="mb-4 d-block ">
+                <label for="Initial">
+                  Initial Deposit <span class="fa fa-money-bill-alt" aria-hidden="true"></span><br/>
+                  <input type="text" id="initial_deposit" class="form-control m-sm-4 p-2 border-primary"
+                /></label>
+                <label for="Final"
+                  >Final Amount <span class="fa fa-money-check" aria-hidden="true"></span><br/>
+                  <input type="text" id="final_amount" class="form-control m-sm-4 p-2 border-primary"
+                ></label>
+              </div>
+              <!--Money Field Above-->
+              
+              <!--Losses and Wins Below-->
+              <div class="mb-4 d-block">
+                <label for="Number of Wins"
+                  >Number of Wins <span class="far fa-smile-beam" aria-hidden="true"></span> <br/>
+
+                  <input type="number" id="numwins" class=" form-control m-sm-4 p-2 border-primary" min="0"/></label>
+        
+                <label for="Number of Losses"
+                  >Number of Losses  <span class="far fa-sad-tear" aria-hidden="true"></span><br />
+
+                  <input type="number" id="numlosses" class=" form-control m-sm-4 p-2 border-primary" min="0"/></label>
+              </div>
+              <!--Losses And Wins Above-->
+          
+              <!--Wins and Losses Array-->
+              <div class="form-group">
+                  <p><span class="fas fa-info-circle" aria-hidden="true"></span> <strong>Note:</strong> Seperate your wins and losses with a single space i.e. (200.43 20.3 433)</p>
+              </div>
+                    <!--Error Message Below-->
+          <div class="popup animate__animated  animate__zoomInDown" id="errorMessage">
+            <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+            <p id="err"></p>
+            <button type="button" class="btn btn-outline-light" id="errorButton">DISMISS</button>
+          </div>
+          <!--Error Message Above-->
+              <div class="form-group">
+                <label for="Wins"
+                  >Enter your Wins: <span id="wins-length"></span> </label>
+                <input type="text" class="input-field" id="wins">
+                
+                <label for="Losses"
+                  >Enter your Losses: <span id="losses-length"></span></label>
+                <input type="text" class="input-field" id="losses">
+                </div>
+                <!--Wins and Losses Array-->
+
+                <!--Output Currency Below-->
+                <p>Select your output currency (Default is USD)</p>
+                <div class="input-group d-block">
+                  <select id="outputCurrency" class="btn btn-default border-primary dropdown-toggle mb-4 text-light">
+                    <option value="USD">US Dollar</option>
+                    <option value="AUD">Australian Dollar</option>
+                    <option value="ZAR">Rands</option>
+                    <option value="CAD">Canadian Dollar</option>
+                    <option value="GBP">Britain Pound</option>
+                    <option value="EUR">Euro</option>
+                  </select>
+                </div>
+                <!--Output Currency Above-->
+              <div id="loading" class=""></div>
+                <!--Submit Button Below-->
+                <div class="col-sm-12 d-block">
+                  <button type="submit" id="calculate" class="btn btn-outline-primary mb-2 mt-3">Calculate</button>
+                </div>
+                <!-- Submit Button Above -->
+            </form>
+              </div>
+            </div>
+          </div>
+
+
+<!-- Result Div -->
+    <div id="myResults">
+    </div>
+
+    </div>
+    <script type="" defer src="code.js"></script>
+    <script src="config.js"></script>
+  </body>
+  <footer>
+    <div class='footer'>
+      Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2021 Created and Designed By Sizo Mhlongo
+    </div>
+  </footer>
+</html>

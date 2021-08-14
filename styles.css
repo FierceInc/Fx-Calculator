@@ -1,0 +1,121 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+}
+body{
+  background: #050533;
+  color: white;
+}
+h1 {
+  font-size: 30px;
+  border-bottom: 1px solid gray;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.div > p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.div {
+  font-size: 20px;
+  font-weight: bold;
+}
+.popup { 
+  color: ivory;
+  border-radius: 5px;
+  background-color: rgba(255, 0, 17, 0.9);
+ padding: 20px;
+ width: 90%;
+ z-index: 1000;
+ margin: auto;
+ display: none;
+}
+.popup > button {
+  color: white;
+  font-size: 20px;
+  width: 200px;
+}
+#err,
+.font {
+  font-size: 25px;
+}
+@media (max-width: 900px) {
+  h1 {
+    font-size: 25px;
+    border-bottom: 1px solid gray;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 50px;
+  }
+  #err,
+  .font {
+    font-size: 20px;
+  }
+}
+.mylink {
+  color: white;
+  text-decoration: none;
+}
+.mylink:hover {
+  color: white;
+}
+.acc {
+  text-transform: uppercase;
+  color: blue;
+  font-size: 20px;
+}
+
+.con{
+  margin: auto;
+  text-align: center;
+}
+.main-container{
+  border: 1px solid white;
+  margin: 20px;
+}
+.input-field{
+  width: 90%;
+  padding: 6px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid lightblue;
+}
+.input-field:focus{
+  outline: none;
+}
+.results{
+  color: black;
+  z-index: 1000;
+}
+option {
+  color: #000;
+}
+#loading {
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  border-top: 3px solid rgb(0, 81, 255);
+  margin: auto;
+  border-radius: 100%;
+  visibility: hidden;
+  animation: loader 1s infinite linear;
+}
+#loading.display {
+  visibility: visible;
+}
+@keyframes loader {
+ from{transform: rotate(0deg);}
+ to{transform: rotate(360deg);}
+}
+.footer{
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgb(148, 148, 148);
+}
